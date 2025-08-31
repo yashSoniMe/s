@@ -20,21 +20,7 @@ class _mainPageState extends State<mainPage> {
         ),
       ),
       body: Center(
-        child: Row(
-          children: [
-            gridTile(row: 1,column: 1,value: 1),
-            gridTile(row: 1,column: 2,value: 2),
-            gridTile(row: 1,column: 3,value: 3),
-            gridTile(row: 1,column: 4,value: 4),
-            gridTile(row: 1,column: 5,value: 5),
-            gridTile(row: 1,column: 6,value: 6),
-            gridTile(row: 1,column: 7,value: 7),
-            gridTile(row: 1,column: 8,value: 8),
-            gridTile(row: 1,column: 9,value: 9),
-
-
-          ],
-        ),
+        child: chooser(),
       ),
     );
   }
