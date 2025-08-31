@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:s/Widgets/chooser.dart';
 import 'package:s/Widgets/gridTile.dart';
+import 'package:s/Widgets/sudokuGrid.dart';
 
 class mainPage extends StatefulWidget {
   const mainPage({super.key});
@@ -20,7 +21,16 @@ class _mainPageState extends State<mainPage> {
         ),
       ),
       body: Center(
-        child: chooser(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SudokuGrid(),
+            chooser(),
+            ElevatedButton(onPressed: (){
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(backgroundColor: Colors.green,content: Text('Not free to solve for you',style: TextStyle(fontSize: 22),)));
+            }, child: Text("Solve",style: TextStyle(fontSize: 30,fontFamily: 'myFontFamily')),)
+          ],
+        ),
       ),
     );
   }
