@@ -25,6 +25,7 @@ class _chooserState extends State<chooser> {
         choicer(choice_number: 7),
         choicer(choice_number: 8),
         choicer(choice_number: 9),
+        choicer(choice_number: 0)
 
       ],
     );
@@ -58,7 +59,7 @@ class _choicerState extends State<choicer> {
                     width: 0.5
                 )
             ),
-            child: Center(child: Text(widget.choice_number.toString(), style: const TextStyle(fontSize: 30,fontFamily: 'myFontFamily'),)),
+            child: Center(child: (widget.choice_number==0) ? const Icon(Icons.clear_rounded): Text(widget.choice_number.toString(), style: const TextStyle(fontSize: 30,fontFamily: 'myFontFamily'),)),
           )
       ),
     );
