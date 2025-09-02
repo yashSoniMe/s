@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:s/Functions/dataStoringFunction.dart';
 import 'package:s/Providers/choiceNumberProvider.dart';
 
 class gridTile extends StatefulWidget {
@@ -22,6 +23,7 @@ class _gridTileState extends State<gridTile> {
           onTap: (){
             setState(() {
               widget.value=providerModel.currentChoice;
+              storeData(widget.row,widget.column,widget.value);
             });
           },
           child: Container(

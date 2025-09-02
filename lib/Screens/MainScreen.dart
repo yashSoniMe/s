@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:s/Functions/dataStoringFunction.dart';
 import 'package:s/Widgets/chooser.dart';
 import 'package:s/Widgets/gridTile.dart';
 import 'package:s/Widgets/sudokuGrid.dart';
@@ -27,7 +28,7 @@ class _mainPageState extends State<mainPage> {
             SudokuGrid(),
             chooser(),
             ElevatedButton(onPressed: (){
-              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(backgroundColor: Colors.green,content: Text('Not free to solve for you',style: TextStyle(fontSize: 22),)));
+            trigger();
             }, child: Text("Solve",style: TextStyle(fontSize: 30,fontFamily: 'myFontFamily')),)
           ],
         ),
