@@ -1,13 +1,15 @@
+import 'package:flutter/material.dart';
+import '../Screens/solutionPage.dart';
+
 List<List<int>> grid = List.generate(9, (_) => List.generate(9, (_) => 0));
 void storeData(int row,int column,int value){
   grid[row-1][column-1]=value;
-  print(grid);
 }
 
-void trigger(){
+void trigger(BuildContext context){
   SudokuSolver solver = SudokuSolver();
   List<List<int>> solvedPuzzle = solver.solve(grid);
-  printGrid(solvedPuzzle);
+  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => solutionPage(answer: solvedPuzzle),));
 }
 /////////////////////////////////////////
 class SudokuSolver {
@@ -65,21 +67,5 @@ class SudokuSolver {
     }
 
     return true;
-  }
-}
-
-void printGrid(List<List<int>> grid) {
-  for (int i = 0; i < 9; i++) {
-    if (i % 3 == 0 && i != 0) {
-      print("- - - - - - - - - - -");
-    }
-    String row = "";
-    for (int j = 0; j < 9; j++) {
-      if (j % 3 == 0 && j != 0) {
-        row += "| ";
-      }
-      row += "${grid[i][j]} ";
-    }
-    print(row);
   }
 }

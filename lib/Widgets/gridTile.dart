@@ -5,7 +5,7 @@ import 'package:s/Providers/choiceNumberProvider.dart';
 
 class gridTile extends StatefulWidget {
 
-  gridTile({required this.row,required this.column,required this.box});
+  gridTile({super.key, required this.row,required this.column,required this.box});
   int row,column,box,value=0;
 
   @override

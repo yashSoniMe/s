@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:s/Functions/dataStoringFunction.dart';
 import 'package:s/Widgets/chooser.dart';
-import 'package:s/Widgets/gridTile.dart';
 import 'package:s/Widgets/sudokuGrid.dart';
 
 class mainPage extends StatefulWidget {
@@ -17,7 +16,7 @@ class _mainPageState extends State<mainPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Center(
+        title: const Center(
             child: Text("Sudoku Solver")
         ),
       ),
@@ -25,11 +24,11 @@ class _mainPageState extends State<mainPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SudokuGrid(),
-            chooser(),
+            const SudokuGrid(),
+            const chooser(),
             ElevatedButton(onPressed: (){
-            trigger();
-            }, child: Text("Solve",style: TextStyle(fontSize: 30,fontFamily: 'myFontFamily')),)
+            trigger(context);
+            }, child: const Text("Solve",style: TextStyle(fontSize: 30,fontFamily: 'myFontFamily')),)
           ],
         ),
       ),
